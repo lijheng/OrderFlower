@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.summer.orderflower.fragment.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--在不适用fitSystemWindows的情况下不让布局填充到状态栏-->
+    <LinearLayout
+        android:id="@+id/home_bar"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="vertical"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ededed"
+            android:orientation="vertical">
+            <!--上方定位搜索-->
+            <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#05c0af"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/address"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:textSize="25sp"
+                    android:textColor="#FFFFFF"
+                    android:text="十陵" />
+
+                <ImageButton
+                    android:id="@+id/gps_location"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#05c0af"
+                    android:src="@mipmap/img_gps_location"/>
+                <!--<SearchView
+                    android:id="@+id/search"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#ffffff"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:queryHint="花之苑" />-->
+                <Button
+                    android:id="@+id/btn_search"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:background="#ffffff"
+                    android:textColor="#05c0af"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_hint"/>
+                <Button
+                    android:textSize="25sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="#05c0af"
+                    android:text="搜索"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.example.summer.orderflower.view.DecoratorViewPager
+                    android:id="@+id/ad_viewPage_listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:fadingEdge="none" />
+
+                <LinearLayout
+                    android:id="@+id/carousel_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="40dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+            </RelativeLayout>
+
+            <com.example.summer.orderflower.view.ListViewInSrcollView
+                android:id="@+id/home_listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="#ffffff"
+                android:divider="#ededed"
+                android:dividerHeight="2dp"
+                android:footerDividersEnabled="true" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
